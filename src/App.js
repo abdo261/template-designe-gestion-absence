@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes } from "react-router-dom";
+import "./App.css";
+import { absenceRouter } from "./pages/absence/routes";
+import { dommandeRouter } from "./pages/dommande/routes";
+import { enseignantRouter } from "./pages/enseignant/routes";
+import { etablissementRouter } from "./pages/etablissement/routes";
+import { homeRouter } from "./pages/home/routes";
+import { responsableRouter } from "./pages/responsable/routes";
+import { communeRouter } from "./pages/commune/routes";
+import { profileRouter } from "./pages/profile/routes";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        {homeRouter}
+        {communeRouter}
+        {etablissementRouter}
+        {enseignantRouter}
+        {responsableRouter}
+        {absenceRouter}
+        {dommandeRouter}
+        {profileRouter}
+      </Routes>
     </div>
   );
 }
